@@ -24,10 +24,11 @@ const pattern = '\{\{((?!\}\})(.|\n))*\}\}';
 // merge(template,modal);
 
 function merge(template, modal){
-    template.replace('/{{[a-zA-Z]*}}/g', function(x,y){
+    template.replace(/{{[a-zA-Z]*}}/g, function(x,y){
         console.log(x,y);
         return '1';
     });
 }
-
-merge(template,modal);
+setTimeout(() =>{
+    merge(template,modal);
+}, 12000);

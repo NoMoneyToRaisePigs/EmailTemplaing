@@ -1,0 +1,23 @@
+{
+  "name": "emailtemplaing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaofan19901103/EmailTemplaing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gaofan19901103/EmailTemplaing/issues"
+  },
+  "homepage": "https://github.com/gaofan19901103/EmailTemplaing#readme",
+  "dependencies": {
+    "activedirectory": "^0.7.2",
+    "passport-windowsauth": "^3.0.1"
+  }
+}
