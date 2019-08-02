@@ -5,28 +5,37 @@
     <meta charset="UTF-8">
     <!-- <script src="https://cloud.tinymce.com/5/tinymce.min.js"></script> -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link href="field-list.css" rel="stylesheet">
   </head>
   <body>
-    <div id="fildes-container">
-      <ul>
-        <li>user name</li>
-        <li>run id</li>
-        <li>run status</li>
-        <li>residule</li>
-      </ul>
-    </div>
+    <header></header>
+    <main>
+      <section>
+          <div id="fildes-container">
+              <ul>
+                <li>user name</li>
+                <li>run id</li>
+                <li>run status</li>
+                <li>residule</li>
+              </ul>
+            </div>
+      </section>
+      <section>
+          <div style="width: 500px; height: 500px;">
+              <div id="editor" style="height: calc(100% - 42px);">
+                <p>Hello World!</p>
+                <p>Some initial <strong>bold</strong> text</p>
+                <p><br></p>
+              </div>
+            </div>
+      </section>
+    </main>
+
     <!-- <textarea>Next, use our Get Started docs to setup Tiny!</textarea> -->
-    <div style="width: 500px; height: 500px;">
-      <div id="editor" style="height: calc(100% - 42px);">
-        <p>Hello World!</p>
-        <p>Some initial <strong>bold</strong> text</p>
-        <p><br></p>
-      </div>
-    </div>
+
     <hr>
     <button onclick="email()">preview</button>
   </body>
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-  <script src="index.js"></script>
-  <script src="merge.js"></script>
+  <script src="dist/build.js"></script>
 </html>

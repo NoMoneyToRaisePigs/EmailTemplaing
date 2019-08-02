@@ -1,19 +1,4 @@
-// var x = tinymce.init({selector:'textarea'});
-
-var quill = new Quill('#editor', {
-    modules: {
-      toolbar: [
-        [{ header: [1, 2, false] }],
-        ['bold', 'italic', 'underline'],
-        ['image', 'code-block'],
-        [{'color': ["#000000", "#e60000", "#ff9900", "#ffff00", "#008a00"]}]
-      ]
-    },
-    theme: 'snow'
-  });
-
-
-  function email(){
+export function previewEmail(){
     //var mailHtm = "<h1>Sample Email</h1>";
     var mailHtm = quill.container.firstElementChild.innerHTML;
     var emailTo = "abc@test.com";
@@ -44,4 +29,5 @@ var quill = new Quill('#editor', {
     a.style.visibility = 'hidden';
     document.body.appendChild(a);
     document.getElementById('fileLink').click();
+    a.remove();
   }

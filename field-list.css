@@ -1,3 +1,7 @@
+main{
+    display: flex;
+}
+
 #fields-container{
     width: 100%;
     
