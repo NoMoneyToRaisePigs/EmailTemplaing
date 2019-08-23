@@ -1,34 +1,12 @@
-var modal = {
-    userName: 'Din Jian',
-    runId: 12345,
-    runStatus: 'closed'
-};
 
-var template = `
-    Hello {{userName}},
 
-    You run {{runId}} is {{runStatus}}.
-
-    Thanks.
-`;
-
-const pattern = '\{\{((?!\}\})(.|\n))*\}\}';
-
-// function merge(template, modal){
-//     template.replace(pattern, function(x,y){
-//         console.log(x,y);
-//         return '1';
-//     });
-// }
-
-// merge(template,modal);
-
-function merge(template, modal){
-    template.replace(/{{[a-zA-Z]*}}/g, function(x,y){
-        console.log(x,y);
-        return '1';
+export function merge(template, modal){
+    template.replace(/{{([a-zA-Z0-9])*}}/g, function(match,a,b){
+        let property = match.substring(2, match.length-2);
+        let value = modal[property];
+        template = template.replace(match, value.toString());
+        console.log(template);
     });
+    return template;
 }
-setTimeout(() =>{
-    merge(template,modal);
-}, 12000);
+

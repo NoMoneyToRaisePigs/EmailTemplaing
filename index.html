@@ -12,20 +12,15 @@
     <main>
       <section>
           <div id="fildes-container">
-              <ul>
-                <li>user name</li>
-                <li>run id</li>
-                <li>run status</li>
-                <li>residule</li>
+              <ul id="user-fields">
+
               </ul>
             </div>
       </section>
       <section>
           <div style="width: 500px; height: 500px;">
               <div id="editor" style="height: calc(100% - 42px);">
-                <p>Hello World!</p>
-                <p>Some initial <strong>bold</strong> text</p>
-                <p><br></p>
+
               </div>
             </div>
       </section>
@@ -33,8 +28,11 @@
 
     <!-- <textarea>Next, use our Get Started docs to setup Tiny!</textarea> -->
 
-    <hr>
-    <button onclick="email()">preview</button>
+    <hr>   
+    <button id="get-modal-btn">get modal</button> 
+    <button id="merge-btn">merge</button>
+    <button id="preview-btn">preview</button>
+
   </body>
   <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
   <script src="dist/build.js"></script>

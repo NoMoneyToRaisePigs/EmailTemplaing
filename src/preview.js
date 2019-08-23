@@ -1,6 +1,13 @@
+import {quill} from './editor';
+import {merge} from './merge';
+
+
 export function previewEmail(){
     //var mailHtm = "<h1>Sample Email</h1>";
     var mailHtm = quill.container.firstElementChild.innerHTML;
+
+    mailHtm = merge(mailHtm, window.editorModal);
+
     var emailTo = "abc@test.com";
     var emailSubject = "test email";
     var emlCont = 'To: ' + emailTo + '\n';

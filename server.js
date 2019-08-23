@@ -8,10 +8,10 @@ app.use(express.json());
 
 app.use(express.static(__dirname + '/'));
 
-app.use((req, res, next) => {
-  //  res.setHeader('Content-Type', 'application/json');
-    next();
-});
+// app.use((req, res, next) => {
+//   //  res.setHeader('Content-Type', 'application/json');
+//     next();
+// });
 
 app.get('/',function(req,res)
 {
@@ -20,6 +20,8 @@ app.get('/',function(req,res)
 
 app.get('/xxx',function(req,res)
 {
+    let userId = req.query.userId;
+
     var sql  = require('mssql/msnodesqlv8');
 
     var dbConfig = {    
@@ -35,21 +37,19 @@ app.get('/xxx',function(req,res)
             sql.close();
         }
         else {                       
-            var request = new sql.Request();         
-            var q = ''; 
-            request.query("SELECT * FROM DEV_Portal66..[User] WHERE UserId = 31",function(err, data){
+            var sqlrequest = new sql.Request();         
+
+            sqlrequest.query(`SELECT * FROM DEV_Portal66..[User] WHERE UserId = ${userId}`,function(err, data){
                 if(err){
                     console.log("Error while connecting database :- " + err);
                     res.send(err);
                 }
                 else{
-                    let x = data;
+                    res.end(JSON.stringify(data.recordset[0]));
                 }
                 sql.close();    
             });            
         }
-
-        res.send('xxx');
     });
 
     // var config = {
@@ -91,7 +91,7 @@ app.post('/user', function (req, res) {
     var ad = new ActiveDirectory(config);
     
     var username = 'fan gao';
-    var password = 'Gf!19901103';
+    var password = 'Gf@19901103';
     
     
     ad.authenticate(username, password, function(err, auth) {
@@ -116,4 +116,6 @@ app.post('/user', function (req, res) {
 
 
 
-var server=app.listen(3000,function() {});
+var server=app.listen(3000,function() {
+    console.log('listening 3000');
+});
